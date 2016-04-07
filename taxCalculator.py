@@ -18,31 +18,35 @@ bracket5 = 289950
 percentTax1 = 0
 percentTax2 = .15
 percentTax3 = .28
-percentTax3 = .31
-percentTax4 = .36
-percentTax5 = .396
-
-
+percentTax4 = .31
+percentTax5 = .36
+percentTax6 = .396
 
 
 grossIncome = int(input("How much money did you make? "))
+grossIncome -= 9500
 
+#DONE under 2,650
 if grossIncome <= bracket1:
 	totalTaxesOwed = percentTax1 * grossIncome
 	overflowIncome = 0
-	
+
+#DONE under 27,850
 if grossIncome > bracket1 and grossIncome <= bracket2:
 	totalTaxesOwed = percentTax1 * bracket1
 	overflowIncome = grossIncome - bracket1
 	totalTaxesOwed += overflowIncome * percentTax2
-	
+
+#TODO under 59,900	
 if grossIncome > bracket2 and grossIncome <= bracket3:
-	totalTaxesOwed = percentTax1 * bracket1
-	overflowIncome = grossIncome - bracket1
+	
+	totalTaxesOwed = percentTax1 * bracket1	
 	totalTaxesOwed += percentTax2 * (bracket2 - bracket1)
 	overflowIncome = grossIncome - bracket2
-	totalTaxesOwed += percentTax3 * overflowIncome	
+	totalTaxesOwed += percentTax3 * overflowIncome
 	
+
+#TODO under 134,200
 if grossIncome > bracket3 and grossIncome <= bracket4:
 	totalTaxesOwed = percentTax1 * bracket1
 	overflowIncome = grossIncome - bracket1
@@ -51,7 +55,8 @@ if grossIncome > bracket3 and grossIncome <= bracket4:
 	totalTaxesOwed += percentTax3 * (bracket3 - bracket2)
 	overflowIncome = grossIncome - bracket3
 	totalTaxesOwed += percentTax4 * overflowIncome
-	
+
+#TODO under 289950
 if grossIncome > bracket4 and grossIncome <= bracket5:
 	totalTaxesOwed = percentTax1 * bracket1
 	overflowIncome = grossIncome - bracket1
@@ -62,7 +67,8 @@ if grossIncome > bracket4 and grossIncome <= bracket5:
 	totalTaxesOwed += percentTax4 * (bracket4 - bracket3)
 	overflowIncome = grossIncome - bracket4
 	totalTaxesOwed = percentTax5 * overflowIncome
-	
+
+#TODO under infinity
 if grossIncome > bracket5:
 	totalTaxesOwed = percentTax1 * bracket1
 	overflowIncome = grossIncome - bracket1
@@ -72,14 +78,17 @@ if grossIncome > bracket5:
 	overflowIncome = grossIncome - bracket3	
 	totalTaxesOwed += percentTax4 * (bracket4 - bracket3)
 	overflowIncome = grossIncome - bracket4
-	totalTaxesOwed = percentTax5 * overflowIncome
+	totalTaxesOwed += percentTax5 * overflowIncome
+	overflowIncome = grossIncome - bracket5
+	totalTaxesOwed += percentTax5 * overflowIncome
 
 	
+grossIncome += 9500	
 
 
-print(grossIncome)
-print(totalTaxesOwed)	
-print(overflowIncome)
+print("Your gross income is {}.".format(grossIncome))
+print("You owe ${} in taxes".format(totalTaxesOwed))
+print("Your efficiency overflow is {}".format(overflowIncome))
 
 
 
