@@ -29,14 +29,57 @@ grossIncome = int(input("How much money did you make? "))
 
 if grossIncome <= bracket1:
 	totalTaxesOwed = percentTax1 * grossIncome
+	overflowIncome = 0
 	
 if grossIncome > bracket1 and grossIncome <= bracket2:
 	totalTaxesOwed = percentTax1 * bracket1
 	overflowIncome = grossIncome - bracket1
-	totalTaxesOwed = overflowIncome * percentTax2
+	totalTaxesOwed += overflowIncome * percentTax2
 	
+if grossIncome > bracket2 and grossIncome <= bracket3:
+	totalTaxesOwed = percentTax1 * bracket1
+	overflowIncome = grossIncome - bracket1
+	totalTaxesOwed += percentTax2 * (bracket2 - bracket1)
+	overflowIncome = grossIncome - bracket2
+	totalTaxesOwed += percentTax3 * overflowIncome	
+	
+if grossIncome > bracket3 and grossIncome <= bracket4:
+	totalTaxesOwed = percentTax1 * bracket1
+	overflowIncome = grossIncome - bracket1
+	totalTaxesOwed += percentTax2 * (bracket2 - bracket1)
+	overflowIncome = grossIncome - bracket2
+	totalTaxesOwed += percentTax3 * (bracket3 - bracket2)
+	overflowIncome = grossIncome - bracket3
+	totalTaxesOwed += percentTax4 * overflowIncome
+	
+if grossIncome > bracket4 and grossIncome <= bracket5:
+	totalTaxesOwed = percentTax1 * bracket1
+	overflowIncome = grossIncome - bracket1
+	totalTaxesOwed += percentTax2 * (bracket2 - bracket1)
+	overflowIncome = grossIncome - bracket2
+	totalTaxesOwed += percentTax3 * (bracket3 - bracket2)
+	overflowIncome = grossIncome - bracket3	
+	totalTaxesOwed += percentTax4 * (bracket4 - bracket3)
+	overflowIncome = grossIncome - bracket4
+	totalTaxesOwed = percentTax5 * overflowIncome
+	
+if grossIncome > bracket5:
+	totalTaxesOwed = percentTax1 * bracket1
+	overflowIncome = grossIncome - bracket1
+	totalTaxesOwed += percentTax2 * (bracket2 - bracket1)
+	overflowIncome = grossIncome - bracket2
+	totalTaxesOwed += percentTax3 * (bracket3 - bracket2)
+	overflowIncome = grossIncome - bracket3	
+	totalTaxesOwed += percentTax4 * (bracket4 - bracket3)
+	overflowIncome = grossIncome - bracket4
+	totalTaxesOwed = percentTax5 * overflowIncome
+
+	
+
+
 print(grossIncome)
 print(totalTaxesOwed)	
+print(overflowIncome)
 
 
 
