@@ -19,21 +19,27 @@ Final year of the Clinton administration
 OVER
 NOT OVER
 AMOUNT OF TAX
+
 $0
 $2,650
 0%
+
 $2,650
 $27,850
 15%
+
 $27,850
 $59,900
 28%
+
 $59,900
 $134,200
 31%
+
 $134,200
 $289,950
 36%
+
 $289,950
 AND OVER
 39.6%
@@ -44,21 +50,27 @@ The final year of the Bush administration
 OVER
 NOT OVER
 AMOUNT OF TAX
+
 $0
 $8,025
 10%
+
 $8,025
 $32,550
 15%
+
 $32,550
 $78,850
 25%
+
 $78,850
 $164,550
 28%
+
 $164,550
 $357,700
 33%
+
 $357,700
 AND OVER
 35%
@@ -69,6 +81,7 @@ The most recent data
 OVER
 NOT OVER
 AMOUNT OF TAX
+
 $0
 $8,700
 10%
